@@ -10,7 +10,7 @@ body {
     repeating-linear-gradient(to right, transparent 0 150px, #0001 150px 151px),
     repeating-linear-gradient(to bottom, transparent 0 150px, #0001 150px 151px),
     linear-gradient(to right, #cdcdcdcc, #cdcdcdcc),
-    url('./Images/bg.jpg'); /* Correct relative path */
+    url(../Images/bg.jpg); /* Correct relative path */
 }
 
 * {
@@ -156,5 +156,5 @@ h2 {
 }
 
 .banner .product:hover .soda:nth-child(2) {
-  opacity: 100;
+  opacity: 100 !important;
 }

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: Poppins;
+  color: #1e1e1e;
+  background-color: #cdcdcd;
+  background-image:
+    repeating-linear-gradient(to right, transparent 0 150px, #0001 150px 151px),
+    repeating-linear-gradient(to bottom, transparent 0 150px, #0001 150px 151px),
+    linear-gradient(to right, #cdcdcdcc, #cdcdcdcc),
+    url('../Images/bg.jpg');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.head {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 50px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.header_1 h1,
+h2 {
+  font-family: Karantina;
+  font-size: 50px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.header_1 h2 {
+  font-size: 100px;
+}
+
+.header_2 h1,
+h2 {
+  max-width: 500px;
+}
+
+.header_2 h1,
+h2 {
+  text-align: right;
+  font-family: Karantina;
+  font-size: 50px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.header_2 h2 {
+  font-size: 100px;
+}
+
+.banner {
+  padding-top: 0;
+  margin-top: -150px;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .product {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 170px;
+  z-index: 2;
+  width: 500px;
+  transition: 0.7s;
+  --left: -300px;
+  display: flex;
+}
+
+.banner .product .soda {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background:
+    var(--url) var(--left) 0,
+    url(../Images/mockup.png);
+  background-size: auto 100%;
+  width: 200px;
+  aspect-ratio: 2 / 4;
+  background-blend-mode: multiply;
+  transition: 0.8s;
+  mask-image: url(../Images/mockup.png);
+  mask-size: auto 100%;
+}
+
+.banner .product:hover {
+  --left: -1100px;
+  transform: translateX(-50%) translateY(-120px);
+}
+
+.banner.rock {
+  position: absolute;
+  inset: 0 0 0 0;
+  pointer-events: none;
+}
+
+.banner .rock img {
+  position: absolute;
+  transition: 0.7s;
+}
+
+.banner .rock img:nth-child(1) {
+  height: 170px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+}
+
+.banner:has(.product:hover) .rock img:nth-child(1) {
+  transform: translateX(-50%) translateY(50px);
+}
+
+.banner .rock img:nth-child(2) {
+  height: 52%;
+  left: 0;
+  bottom: 0;
+}
+
+.banner:has(.product:hover) .rock img:nth-child(2) {
+  transform: translateX(-100px) translateY(100px);
+}
+
+.banner .rock img:nth-child(3) {
+  height: 52%;
+  right: 0;
+  bottom: 0;
+}
+
+.banner:has(.product:hover) .rock img:nth-child(3) {
+  transform: translateX(50%) translateY(100px);
+}
+
+.banner .product .soda:nth-child(2) {
+  opacity: 0;
+}
+
+.banner .product:hover .soda:nth-child(2) {
+  opacity: 100;
+}

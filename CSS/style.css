@@ -156,5 +156,5 @@ h2 {
 }
 
 .banner .product:hover .soda:nth-child(2) {
-  opacity: 100 !important;
+  opacity: 100%;
 }

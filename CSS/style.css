@@ -92,8 +92,7 @@ h2 {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background:
-    var(--url) var(--left) 0,
+  background: var(--url) var(--left) 0,
     url(../Images/mockup.png); /* Correct relative path */
   background-size: auto 100%;
   width: 200px;
@@ -151,10 +150,16 @@ h2 {
   transform: translateX(50%) translateY(100px);
 }
 
+/* Fix for the second image's opacity */
 .banner .product .soda:nth-child(2) {
-  opacity: 0;
+  opacity: 0;  /* Make the second image invisible by default */
+  transition: opacity 0.8s ease-in-out; /* Smooth opacity transition */
+  z-index: 1; /* Ensure it's below other elements */
 }
 
+/* Hover state for the second image */
 .banner .product:hover .soda:nth-child(2) {
-  opacity: 100;
+  opacity: 1;  /* Make the second image visible when hovering */
+  transition: opacity 0.8s ease-in-out; /* Smooth opacity transition */
+  z-index: 2; /* Bring the image to the front when hovered */
 }
